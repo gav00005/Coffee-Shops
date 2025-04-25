@@ -197,7 +197,7 @@ def _(mo):
     mo.md(
         r"""
         ###Final Data Frame
-        For the final data frame for this section to be useful it needed to be ordered by day of the week. So a dictionary was created to map the days of the week to a number, than inserted into the dataframe and then sorted by that. 
+        For the final data frame for this section to be useful it needed to be ordered by day of the week. So a dictionary was created to map the days of the week to a number, than inserted into the dataframe and then sorted by that.
         """
     )
     return
@@ -221,7 +221,7 @@ def _(mo):
     mo.md(
         """
         ###Final Graph
-        A Line graph was chosen to better show the differences between the transactional averages per day. It can be seen that Monday, Thursday and Friday have the highest averages. This makes sense as people generally want coffee on Monday to get a good start of the week, and on Thursday and Friday so that they can get through the day faster for the weekend. 
+        A Line graph was chosen to better show the differences between the transactional averages per day. It can be seen that Monday, Thursday and Friday have the highest averages. This makes sense as people generally want coffee on Monday to get a good start of the week, and on Thursday and Friday so that they can get through the day faster for the weekend.
         """
     )
     return
@@ -285,7 +285,7 @@ def _(mo):
     mo.md(
         """
         ###Revenue Table
-        Like above a table was created to show the top and bottom 3 products with the lowest revenue. When looking at the table you can see that Coffee, Tea, and Bakery items produce the most revenue, while Loose Tea, Flavours, and Packaged Chocolate produce the least revenue. 
+        Like above a table was created to show the top and bottom 3 products with the lowest revenue. When looking at the table you can see that Coffee, Tea, and Bakery items produce the most revenue, while Loose Tea, Flavours, and Packaged Chocolate produce the least revenue.
         """
     )
     return
@@ -306,13 +306,13 @@ def _(hour_df, pl):
     rev_comb3 = rev_comb2.rename({
         "product_category" : "Product Type",
         "total_revenue" : "Product Revenue"})
-    rev_comb3 
+    rev_comb3
     return Top_rev, bot_rev, prod_rev, rev_comb, rev_comb2, rev_comb3
 
 
 @app.cell
 def _(mo):
-    mo.md(r"""##Which Produces the Most Revenue""")
+    mo.md(r"""##Which Location Produces the Most Revenue""")
     return
 
 
@@ -342,7 +342,7 @@ def _(mo):
     mo.md(
         """
         ###Location Revenue Chart
-        From the chart below it can be see that Maven Roasters makes about the same amount of revenue from each location, with the Hell's Kitchen Location Slightly leading the Pack in terms of Revenue. 
+        From the chart below it can be see that Maven Roasters makes about the same amount of revenue from each location, with the Hell's Kitchen Location Slightly leading the Pack in terms of Revenue.
         """
     )
     return
@@ -414,12 +414,23 @@ def _(hour_df, pl):
 
 
 @app.cell
+def _(mo):
+    mo.md(
+        r"""
+        ###Total Revenue per Hour Chart
+        When looking at the Chart below it can be seen Maven Roasters produces most of its revenue between the hours of 8-10, which makes sense as thats when people are heading to work would want coffee.
+        """
+    )
+    return
+
+
+@app.cell
 def _(hour_table2, px):
     fig_hour = px.bar(
         hour_table2,
         x = "Hour",
         y = "Total_Revenue",
-        title = "Revenue by Hour of the Day",
+        title = "Total Revenue per Hour",
         color = "Hour"
     )
     fig_hour.update_layout(
