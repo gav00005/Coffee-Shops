@@ -1,0 +1,11 @@
+[project]
+name = "Team-8-Final-Code"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "marimo[recommended]>=0.11.12",
+    "plotly[express]>=6.0.0",
+    "polars[all]>=1.23.0",
+]
