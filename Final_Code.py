@@ -58,7 +58,8 @@ def _(df, pl):
 def _(mo):
     mo.md(
         """
-        ###The Final Thing Added For the Inital Setup Was a Column that Showed the Day of the Week
+        ###The Final Thing Added For the Inital Setup Was a Column that Showed the Day of the Week. 
+        Heres the source for dt.weekday() which was used to pull the week day from the date column: https://docs.pola.rs/releases/upgrade/0.20/#smaller-integer-data-types-for-datetime-components-dtmonth-dtweek
         Which can be seen below:
         """
     )
@@ -197,7 +198,7 @@ def _(mo):
     mo.md(
         r"""
         ###Final Data Frame
-        For the final data frame for this section to be useful it needed to be ordered by day of the week. So a dictionary was created to map the days of the week to a number, than inserted into the dataframe and then sorted by that.
+        For the final data frame for this section to be useful it needed to be ordered by day of the week. So a dictionary was created to map the days of the week to a number, than inserted into the dataframe and then sorted by that. Using .replace with a dictionary was found here https://docs.pola.rs/api/python/stable/reference/expressions/api/polars.Expr.replace.html#polars.Expr.replace
         """
     )
     return
@@ -343,6 +344,7 @@ def _(mo):
         """
         ###Location Revenue Chart
         From the chart below it can be see that Maven Roasters makes about the same amount of revenue from each location, with the Hell's Kitchen Location Slightly leading the Pack in terms of Revenue.
+        The color = "data" was found with https://plotly.com/python/bar-charts/
         """
     )
     return
@@ -377,7 +379,8 @@ def _(mo):
     mo.md(
         """
         ###Adding Hour of Day Column
-        The first step was adding an hour of the day coloumn to the cleaned data frame
+        The first step was adding an hour of the day coloumn to the cleaned data frame.
+        dt.hour() source: https://docs.pola.rs/releases/upgrade/0.20/#smaller-integer-data-types-for-datetime-components-dtmonth-dtweek
         """
     )
     return
